@@ -2,23 +2,22 @@
 % Please edit documentation in R/utility.R
 \name{clusterWithItem}
 \alias{clusterWithItem}
-\title{Identify which cluster contains a given item}
+\title{Identify Which Cluster Contains a Given Item}
 \usage{
 clusterWithItem(i, partition)
 }
 \arguments{
 \item{i}{Item index as an integer vector of length one}
 
-\item{partition}{Set partition of the integers \eqn{1}, ..., \eqn{n} represented as either
-a numeric vector of cluster labels, or a list containing subsets of these integers}
+\item{partition}{Set partition of the integers \eqn{1}, ..., \eqn{n}
+represented as either a numeric vector of cluster labels, or a list
+containing subsets of these integers}
 }
 \value{
-A list consisting of
-  \describe{
-    \item{which}{An integer representing which cluster \code{i} belongs to}
-    \item{cluster}{The subset of indices that correspond to the same cluster as \code{i}}
-  }
+A list consisting of \describe{ \item{which}{An integer representing
+  which cluster \code{i} belongs to} \item{cluster}{The subset of indices
+  that correspond to the same cluster as \code{i}} }
 }
 \description{
-Identify which cluster contains a given item
+Identify Which Cluster Contains a Given Item
 }

@@ -1,7 +1,7 @@
-#' Calculate the entropy of a set partition
+#' Calculate the Entropy of a Set Partition
 #'
-#' @param partition A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-#'  using cluster labels
+#' @param partition A numeric vector representing a partition of the integers
+#'   \eqn{1}, ..., \eqn{n} using cluster labels
 #'
 #' @return Calculated partition entropy as a numeric vector of length one
 #'
@@ -22,13 +22,13 @@ partitionEntropy <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Calculate the number of items in the largest cluster of a set partition
+#' Calculate the Number of Items in the Largest Cluster of a Set Partition
 #'
-#' @param partition A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-#'  using cluster labels
+#' @param partition A numeric vector representing a partition of the integers
+#'   \eqn{1}, ..., \eqn{n} using cluster labels
 #'
-#' @return The number of items in the largest cluster of the given partition as a numeric vector
-#'  of length one
+#' @return The number of items in the largest cluster of the given partition as
+#'   a numeric vector of length one.
 #'
 #' @export
 #' @examples
@@ -45,12 +45,13 @@ sizeOfLargestCluster <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Count the number of clusters in a set partition
+#' Count the Number of Clusters in a Set Partition
 #'
-#' @param partition A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-#'  using cluster labels
+#' @param partition A numeric vector representing a partition of the integers
+#'   \eqn{1}, ..., \eqn{n} using cluster labels
 #'
-#' @return The number of clusters in the given set partition as a numeric vector of length one
+#' @return The number of clusters in the given set partition as a numeric vector
+#'   of length one.
 #'
 #' @export
 #'
@@ -68,13 +69,13 @@ nClusters <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Compute the proportion of items in each cluster for all partitions
+#' Compute the Proportion of Items in Each Cluster for All Partitions
 #'
-#' @param partitions A matrix, with each row representing a set partition of the integers
-#' \eqn{1}, ..., \eqn{n} as cluster labels
+#' @param partitions A matrix, with each row representing a set partition of the
+#'   integers \eqn{1}, ..., \eqn{n} as cluster labels
 #'
-#' @return A matrix whose columns represent the cumulative proportion of the data that correspond to
-#'  that cluster
+#' @return A matrix whose columns represent the cumulative proportion of the
+#'   data that correspond to that cluster.
 #'
 #' @export
 #'
@@ -134,13 +135,14 @@ clusterProportions <- function(partitions) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Plot traces of cluster sizes
+#' Plot Traces of Cluster Sizes
 #' @import graphics
 #'
 #' @param partitions A matrix, with each row a numeric vector cluster labels
-#' @param plot.cols A character vector of valid color names, whose length represents the maximum
-#'   number of stacked traces to be plotted
-#' @param plot.title A character string to be used as the main title on the trace plot
+#' @param plot.cols A character vector of valid color names, whose length
+#'   represents the maximum number of stacked traces to be plotted
+#' @param plot.title A character string to be used as the main title on the
+#'   trace plot
 #'
 #' @export
 #'
@@ -185,12 +187,12 @@ clusterTrace <- function(partitions,
 
 # ------------------------------------------------------------------------------------------------ #
 
-#' Compute the posterior pairwise similarity for all pairs of items
+#' Compute the Posterior Pairwise Similarity for All Pairs of Items
 #'
 #' @param partitions A matrix, with each row a numeric vector cluster labels
 #'
-#' @return
-#' A symmetric matrix of pairwise similarities based on the partitions given.
+#' @return A symmetric matrix of pairwise similarities based on the partitions
+#'   given.
 #'
 #' @export
 #'
@@ -221,18 +223,9 @@ clusterTrace <- function(partitions,
 #' psm(partitions)
 
 psm <- function(partitions) {
-
-  if (!is.matrix(partitions)) {
-    partitions <- matrix(partitions, nrow = 1)
-  }
-
+  if (!is.matrix(partitions)) partitions <- matrix(partitions, nrow = 1)
   n <- ncol(partitions)
   pairs <- expand.grid(1:n, 1:n)
-  out.vec <- apply(pairs, 1, function(x) {
-    i <- x[1]
-    j <- x[2]
-    mean(partitions[,i] == partitions[,j])
-  })
-
+  out.vec <- apply(pairs, 1, function(x) mean(partitions[,x[1]] == partitions[,x[2]]))
   matrix(out.vec, byrow = TRUE, ncol = n, nrow = n)
 }

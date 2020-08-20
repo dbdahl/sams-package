@@ -1,9 +1,9 @@
-#' Check if a vector of cluster labels is in canonical form
+#' Check if a Vector of Cluster Labels is in Canonical Form
 #'
-#' @param partition A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-#'  using cluster labels
+#' @param partition A numeric vector representing a partition of the integers
+#'   \eqn{1}, ..., \eqn{n} using cluster labels
 #'
-#' @return Logical, indicating whether \code{partition} is in canonical form
+#' @return Logical, indicating whether \code{partition} is in canonical form.
 
 isCanonical <- function(partition) {
   u <- unique(partition)
@@ -14,12 +14,13 @@ isCanonical <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Coerce a vector of cluster labels to canonical form
+#' Coerce a Vector of Cluster Labels to Canonical Form
 #'
-#' @param partition A numeric vector representing a set partition of the integers \eqn{1}, ..., \eqn{n}
-#'  using cluster labels
+#' @param partition A numeric vector representing a set partition of the
+#'   integers \eqn{1}, ..., \eqn{n} using cluster labels
 #'
-#' @return A numeric vector representing \code{partition}, but now in canonical form
+#' @return A numeric vector representing \code{partition}, but now in canonical
+#'   form.
 
 asCanonical <- function(partition) {
   if (!is.numeric(partition)) {
@@ -36,18 +37,16 @@ asCanonical <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Identify which cluster contains a given item
+#' Identify Which Cluster Contains a Given Item
 #'
 #' @param i Item index as an integer vector of length one
-#' @param partition Set partition of the integers \eqn{1}, ..., \eqn{n} represented as either
-#' a numeric vector of cluster labels, or a list containing subsets of these integers
+#' @param partition Set partition of the integers \eqn{1}, ..., \eqn{n}
+#'   represented as either a numeric vector of cluster labels, or a list
+#'   containing subsets of these integers
 #'
-#' @return A list consisting of
-#'   \describe{
-#'     \item{which}{An integer representing which cluster \code{i} belongs to}
-#'     \item{cluster}{The subset of indices that correspond to the same cluster as \code{i}}
-#'   }
-
+#' @return A list consisting of \describe{ \item{which}{An integer representing
+#'   which cluster \code{i} belongs to} \item{cluster}{The subset of indices
+#'   that correspond to the same cluster as \code{i}} }
 
 clusterWithItem <- function(i, partition) UseMethod("clusterWithItem", partition)
 
@@ -62,12 +61,13 @@ clusterWithItem.list <- function(i, partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Create a new cluster with given item
+#' Create a New Cluster with Given Item
 #'
 #' @param i Item index as an integer vector of length one
-#' @param partition Set partition of the integers \eqn{1}, ..., \eqn{n} represented as
-#'  either a numeric vector of cluster labels, or a list containing subsets of these integers
-#' @return Updated partition with new cluster
+#' @param partition Set partition of the integers \eqn{1}, ..., \eqn{n}
+#'   represented as either a numeric vector of cluster labels, or a list
+#'   containing subsets of these integers
+#' @return Updated partition with a new cluster.
 
 createNewCluster <- function(i, partition) UseMethod("createNewCluster", partition)
 
@@ -85,14 +85,15 @@ createNewCluster.list <- function(i, partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Join item to an existing cluster
+#' Join Item to an Existing Cluster
 #'
 #' @param i Item index as an integer vector of length one
 #' @param join Label or index of cluster that \code{i} must join
-#' @param partition Set partition of the integers \eqn{1}, ..., \eqn{n} represented as
-#'  either a numeric vector of cluster labels, or a list containing subsets of these integers
+#' @param partition Set partition of the integers \eqn{1}, ..., \eqn{n}
+#'   represented as either a numeric vector of cluster labels, or a list
+#'   containing subsets of these integers
 #'
-#' @return Updated partition
+#' @return Updated partition.
 
 joinExistingCluster <- function(i, join, partition) UseMethod("joinExistingCluster", partition)
 
@@ -110,10 +111,11 @@ joinExistingCluster.list <- function(i, join, partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Coerce a set partition in list structure to numeric vectors of cluster label
+#' Coerce a Set Partition in List Structure to Numeric Vectors of Cluster Label
 #'
-#' @param partition A list representing a set partition of the integers \eqn{1}, ..., \eqn{n}
-#' @return A numeric vector representing the set partition using cluster labels
+#' @param partition A list representing a set partition of the integers \eqn{1},
+#'   ..., \eqn{n}
+#' @return A numeric vector representing the set partition using cluster labels.
 
 asClusterLabels <- function(partition) {
   if (is.numeric(partition)) return(asCanonical(partition))
@@ -124,12 +126,12 @@ asClusterLabels <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Coerce a set partition as numeric vectors of cluster labels to a list structure
+#' Coerce a Set Partition as Numeric Vectors of Cluster Labels to a List
+#' Structure
 #'
-#' @param partition A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-#'  using cluster labels
-#' @return The set partition in a list structure
-#'
+#' @param partition A numeric vector representing a partition of the integers
+#'   \eqn{1}, ..., \eqn{n} using cluster labels
+#' @return The set partition in a list structure.
 #'
 
 asSetPartition <- function(partition) {
@@ -139,15 +141,16 @@ asSetPartition <- function(partition) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Get \eqn{theta} parameters from a numeric vector of cluster labels and unique \eqn{phi} values
+#' Get theta Parameters from a Numeric Vector of Cluster Labels and Unique phi
+#' Values
 #'
 #' @param partition A numeric vector representing a partition of the integers
-#'  \eqn{1}, ..., \eqn{n} using cluster labels
-#' @param phi A list of unique model parameters whose length must equal
-#'  the number of unique cluster labels in \code{partition}
+#'   \eqn{1}, ..., \eqn{n} using cluster labels
+#' @param phi A list of unique model parameters whose length must equal the
+#'   number of unique cluster labels in \code{partition}
 #'
-#' @return
-#' A numeric vector of model parameters \eqn{theta_1}, ..., \eqn{theta_n}
+#' @return A numeric vector of model parameters \eqn{theta_1}, ...,
+#'   \eqn{theta_n}.
 
 getThetas <- function(partition, phi) {
   if (!isCanonical(partition)) {
@@ -164,12 +167,13 @@ getThetas <- function(partition, phi) {
 
 # ----------------------------------------------------------------------------------------------- #
 
-#' Enumerate transformed weights for choosing i and j non-uniformly
+#' Enumerate Transformed Weights for Choosing i and j Non-Uniformly
 #'
 #' @param m A square matrix of pairwise similarilities between items
-#' @param fn A function that maps pairwise similarities. Default is the identity function.
-#' @param eps A numeric value close to 0 to give some nonzero weight to pairs of items
-#'   with 0 or 1 pairwise similarity
+#' @param fn A function that maps pairwise similarities. Default is the identity
+#'   function.
+#' @param eps A numeric value close to 0 to give some nonzero weight to pairs of
+#'   items with 0 or 1 pairwise similarity
 #'
 #' @export
 
@@ -192,16 +196,16 @@ transformedWeights <- function(m, fn = function(x) x, eps = 1e-12) {
 
 # ------------------------------------------------------------------------------------------------ #
 
-#' Compute the Pochhammer symbol (rising factorials) with increment
+#' Compute the Pochhammer Symbol (Rising Factorials) With Increment
 #'
 #' @param x Non-negative numeric value
-#' @param y Non-negative real value representing increment parameter for Pochhammer function. If
-#'  \code{NULL}, there is no increment (i.e. \code{y=1}).
+#' @param y Non-negative real value representing increment parameter for
+#'   Pochhammer function. If \code{NULL}, there is no increment (i.e.
+#'   \code{y=1}).
 #' @param n Non-negative integer representing subscript in Pochhammer symbol
 #' @param log Logical value indicating whether to return results on log scale
 #'
-#' @return
-#' A numeric value indicating the result of Pochhammer function
+#' @return A numeric value indicating the result of Pochhammer function.
 #'
 #' @export
 #'
@@ -247,18 +251,20 @@ poch <- function(x, y = NULL, n = 1, log = FALSE) {
 
 # ------------------------------------------------------------------------------------------------ #
 
-#' Compute robability mass of a partition under the two parameter Chinese Restaurant Process (CRP)
+#' Compute Probability Mass of a Partition Under the Two Parameter Chinese
+#' Restaurant Process (CRP)
 #'
-#' @param partition A numeric vector of cluster labels, or a matrix whose rows are numeric vectors
-#'   of cluster labels
-#' @param mass A numeric value indicating the mass parameter in the CRP, which must be greater than
-#'   the \code{discount} argument
+#' @param partition A numeric vector of cluster labels, or a matrix whose rows
+#'   are numeric vectors of cluster labels
+#' @param mass A numeric value indicating the mass parameter in the CRP, which
+#'   must be greater than the \code{-discount} argument
 #' @param discount A numeric value on the interval [0,1), indicating the
 #'   discount parameter of the two parameter CRP
-#' @param log A logical value indicating whether results should be returned on the log scale
+#' @param log A logical value indicating whether results should be returned on
+#'   the log scale
 #'
-#' @return
-#' A numeric vector of probabilities, or log probabilities if \code{log = TRUE}
+#' @return A numeric vector of probabilities, or log probabilities if \code{log
+#'   = TRUE}.
 #'
 #' @export
 #'
@@ -280,8 +286,8 @@ dCRP <- function(partition, mass = 1.0, discount = 0.0, log = FALSE) {
   if (discount < 0 | discount >= 1) {
     stop("Function argument 'discount' must be on the interval [0,1).")
   }
-  if (mass <= discount) {
-    stop("Function argument 'mass' must be strictly greater than function argument 'discount'.")
+  if (mass <= -discount) {
+    stop("Function argument 'mass' must be strictly greater than then negative of the function argument 'discount'.")
   }
   if (!is.logical(log)) {
     stop("Function argument 'log' must be either TRUE or FALSE.")

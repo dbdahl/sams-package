@@ -2,19 +2,20 @@
 % Please edit documentation in R/summary.R
 \name{nClusters}
 \alias{nClusters}
-\title{Count the number of clusters in a set partition}
+\title{Count the Number of Clusters in a Set Partition}
 \usage{
 nClusters(partition)
 }
 \arguments{
-\item{partition}{A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-using cluster labels}
+\item{partition}{A numeric vector representing a partition of the integers
+\eqn{1}, ..., \eqn{n} using cluster labels}
 }
 \value{
-The number of clusters in the given set partition as a numeric vector of length one
+The number of clusters in the given set partition as a numeric vector
+  of length one.
 }
 \description{
-Count the number of clusters in a set partition
+Count the Number of Clusters in a Set Partition
 }
 \examples{
 

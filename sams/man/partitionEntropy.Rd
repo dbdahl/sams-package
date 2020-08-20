@@ -2,19 +2,19 @@
 % Please edit documentation in R/summary.R
 \name{partitionEntropy}
 \alias{partitionEntropy}
-\title{Calculate the entropy of a set partition}
+\title{Calculate the Entropy of a Set Partition}
 \usage{
 partitionEntropy(partition)
 }
 \arguments{
-\item{partition}{A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-using cluster labels}
+\item{partition}{A numeric vector representing a partition of the integers
+\eqn{1}, ..., \eqn{n} using cluster labels}
 }
 \value{
 Calculated partition entropy as a numeric vector of length one
 }
 \description{
-Calculate the entropy of a set partition
+Calculate the Entropy of a Set Partition
 }
 \examples{
 

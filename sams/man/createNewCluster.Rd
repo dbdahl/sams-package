@@ -2,19 +2,20 @@
 % Please edit documentation in R/utility.R
 \name{createNewCluster}
 \alias{createNewCluster}
-\title{Create a new cluster with given item}
+\title{Create a New Cluster with Given Item}
 \usage{
 createNewCluster(i, partition)
 }
 \arguments{
 \item{i}{Item index as an integer vector of length one}
 
-\item{partition}{Set partition of the integers \eqn{1}, ..., \eqn{n} represented as
-either a numeric vector of cluster labels, or a list containing subsets of these integers}
+\item{partition}{Set partition of the integers \eqn{1}, ..., \eqn{n}
+represented as either a numeric vector of cluster labels, or a list
+containing subsets of these integers}
 }
 \value{
-Updated partition with new cluster
+Updated partition with a new cluster.
 }
 \description{
-Create a new cluster with given item
+Create a New Cluster with Given Item
 }

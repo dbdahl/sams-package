@@ -1,34 +1,39 @@
-#' Merge-split sampling for a partition based on restricted Gibbs scans
+#' Merge-Split Sampling for a Partition Based on Restricted Gibbs Scans
 #'
-#' Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP) mixture models using
-#'   restricted Gibbs scans from a uniformly random launch state, as presented in Jain & Neal (2004),
-#'   with additional functionality for the two parameter CRP prior.
+#' Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP)
+#' mixture models using restricted Gibbs scans from a uniformly random launch
+#' state, as presented in Jain & Neal (2004), with additional functionality for
+#' the two parameter CRP prior.
 #'
-#' @param partition A numeric vector of cluster labels representing the current partition.
-#' @param logPosteriorPredictiveDensity A function taking an index \eqn{i} (as a numeric vector of
-#'   length one) and a subset of integers \eqn{subset}, and returning the
-#'   natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that item's contribution to the log
-#'   integrated likelihood given a subset of the other items. The default value "turns off" the
-#'   likelihood, resulting in prior simulation (rather than posterior simulation).
-#' @param t A non-negative integer indicating the number of restricted Gibbs scans to perform for
-#'   each merge/split proposal.
-#' @param mass A specification of the mass (concentration) parameter in the CRP prior. Must be
-#'   greater than the \code{discount} argument.
-#' @param discount A numeric value on the interval [0,1) corresponding to the discount parameter in
-#'   the two parameter CRP prior.
-#' @param nUpdates An integer giving the number of merge-split proposals before returning. This has
-#'   the effect of thinning the Markov chain.
-#' @param selectionWeights A matrix or data frame whose first two columns are the unique pairs of
-#'   data indices, along with a column of weights representing how likely each pair is to be
-#'   selected at the beginning of each merge-split update.
+#' @param partition A numeric vector of cluster labels representing the current
+#'   partition.
+#' @param logPosteriorPredictiveDensity A function taking an index \eqn{i} (as a
+#'   numeric vector of length one) and a subset of integers \eqn{subset}, and
+#'   returning the natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that
+#'   item's contribution to the log integrated likelihood given a subset of the
+#'   other items. The default value "turns off" the likelihood, resulting in
+#'   prior simulation (rather than posterior simulation).
+#' @param t A non-negative integer indicating the number of restricted Gibbs
+#'   scans to perform for each merge/split proposal.
+#' @param mass A specification of the mass (concentration) parameter in the CRP
+#'   prior. Must be greater than the \code{-discount} argument.
+#' @param discount A numeric value on the interval [0,1) corresponding to the
+#'   discount parameter in the two parameter CRP prior.
+#' @param nUpdates An integer giving the number of merge-split proposals before
+#'   returning. This has the effect of thinning the Markov chain.
+#' @param selectionWeights A matrix or data frame whose first two columns are
+#'   the unique pairs of data indices, along with a column of weights
+#'   representing how likely each pair is to be selected at the beginning of
+#'   each merge-split update.
 #'
-#' @return \describe{ \item{partition}{An integer vector giving the updated partition encoded using
-#' cluster labels.} \item{accept}{The acceptance rate of the Metropolis-Hastings proposals, i.e. the
-#' number accepted proposals divided by \code{nUpdates}.} }
+#' @return \describe{ \item{partition}{An integer vector giving the updated
+#'   partition encoded using cluster labels.} \item{accept}{The acceptance rate
+#'   of the Metropolis-Hastings proposals, i.e. the number accepted proposals
+#'   divided by \code{nUpdates}.} }
 #'
-#' @references
-#' Jain, S., & Neal, R. M. (2004). A split-merge Markov chain Monte Carlo procedure for the Dirichlet
-#'   process mixture model. \emph{Journal of computational and Graphical Statistics}, 13(1), 158-182.
+#' @references Jain, S., & Neal, R. M. (2004). A split-merge Markov chain Monte
+#' Carlo procedure for the Dirichlet process mixture model. \emph{Journal of
+#' computational and Graphical Statistics}, 13(1), 158-182.
 #'
 #' @import stats
 #'
@@ -90,8 +95,8 @@ restrictedGibbsMergeSplit <- function(partition,
   if (discount < 0 | discount >= 1) {
     stop("Function argument 'discount' must be on the interval [0,1).")
   }
-  if (mass <= discount) {
-    stop("Function argument 'mass' must be strictly greater than function argument 'discount'.")
+  if (mass <= -discount) {
+    stop("Function argument 'mass' must be strictly greater than the negative of the function argument 'discount'.")
   }
   if (!is.integer(nUpdates)) {
     nUpdates <- as.integer(nUpdates)

@@ -2,25 +2,26 @@
 % Please edit documentation in R/utility.R
 \name{poch}
 \alias{poch}
-\title{Compute the Pochhammer symbol (rising factorials) with increment}
+\title{Compute the Pochhammer Symbol (Rising Factorials) With Increment}
 \usage{
 poch(x, y = NULL, n = 1, log = FALSE)
 }
 \arguments{
 \item{x}{Non-negative numeric value}
 
-\item{y}{Non-negative real value representing increment parameter for Pochhammer function. If
-\code{NULL}, there is no increment (i.e. \code{y=1}).}
+\item{y}{Non-negative real value representing increment parameter for
+Pochhammer function. If \code{NULL}, there is no increment (i.e.
+\code{y=1}).}
 
 \item{n}{Non-negative integer representing subscript in Pochhammer symbol}
 
 \item{log}{Logical value indicating whether to return results on log scale}
 }
 \value{
-A numeric value indicating the result of Pochhammer function
+A numeric value indicating the result of Pochhammer function.
 }
 \description{
-Compute the Pochhammer symbol (rising factorials) with increment
+Compute the Pochhammer Symbol (Rising Factorials) With Increment
 }
 \examples{
 # effect of increment parameter

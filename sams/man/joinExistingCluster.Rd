@@ -2,7 +2,7 @@
 % Please edit documentation in R/utility.R
 \name{joinExistingCluster}
 \alias{joinExistingCluster}
-\title{Join item to an existing cluster}
+\title{Join Item to an Existing Cluster}
 \usage{
 joinExistingCluster(i, join, partition)
 }
@@ -11,12 +11,13 @@ joinExistingCluster(i, join, partition)
 
 \item{join}{Label or index of cluster that \code{i} must join}
 
-\item{partition}{Set partition of the integers \eqn{1}, ..., \eqn{n} represented as
-either a numeric vector of cluster labels, or a list containing subsets of these integers}
+\item{partition}{Set partition of the integers \eqn{1}, ..., \eqn{n}
+represented as either a numeric vector of cluster labels, or a list
+containing subsets of these integers}
 }
 \value{
-Updated partition
+Updated partition.
 }
 \description{
-Join item to an existing cluster
+Join Item to an Existing Cluster
 }

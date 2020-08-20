@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary.R
 \name{psm}
 \alias{psm}
-\title{Compute the posterior pairwise similarity for all pairs of items}
+\title{Compute the Posterior Pairwise Similarity for All Pairs of Items}
 \usage{
 psm(partitions)
 }
@@ -10,10 +10,11 @@ psm(partitions)
 \item{partitions}{A matrix, with each row a numeric vector cluster labels}
 }
 \value{
-A symmetric matrix of pairwise similarities based on the partitions given.
+A symmetric matrix of pairwise similarities based on the partitions
+  given.
 }
 \description{
-Compute the posterior pairwise similarity for all pairs of items
+Compute the Posterior Pairwise Similarity for All Pairs of Items
 }
 \examples{
 

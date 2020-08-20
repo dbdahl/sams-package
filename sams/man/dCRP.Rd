@@ -2,27 +2,31 @@
 % Please edit documentation in R/utility.R
 \name{dCRP}
 \alias{dCRP}
-\title{Compute robability mass of a partition under the two parameter Chinese Restaurant Process (CRP)}
+\title{Compute Probability Mass of a Partition Under the Two Parameter Chinese
+Restaurant Process (CRP)}
 \usage{
 dCRP(partition, mass = 1, discount = 0, log = FALSE)
 }
 \arguments{
-\item{partition}{A numeric vector of cluster labels, or a matrix whose rows are numeric vectors
-of cluster labels}
+\item{partition}{A numeric vector of cluster labels, or a matrix whose rows
+are numeric vectors of cluster labels}
 
-\item{mass}{A numeric value indicating the mass parameter in the CRP, which must be greater than
-the \code{discount} argument}
+\item{mass}{A numeric value indicating the mass parameter in the CRP, which
+must be greater than the \code{-discount} argument}
 
 \item{discount}{A numeric value on the interval [0,1), indicating the
 discount parameter of the two parameter CRP}
 
-\item{log}{A logical value indicating whether results should be returned on the log scale}
+\item{log}{A logical value indicating whether results should be returned on
+the log scale}
 }
 \value{
-A numeric vector of probabilities, or log probabilities if \code{log = TRUE}
+A numeric vector of probabilities, or log probabilities if \code{log
+  = TRUE}.
 }
 \description{
-Compute robability mass of a partition under the two parameter Chinese Restaurant Process (CRP)
+Compute Probability Mass of a Partition Under the Two Parameter Chinese
+Restaurant Process (CRP)
 }
 \examples{
 

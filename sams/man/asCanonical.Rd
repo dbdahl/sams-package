@@ -2,17 +2,18 @@
 % Please edit documentation in R/utility.R
 \name{asCanonical}
 \alias{asCanonical}
-\title{Coerce a vector of cluster labels to canonical form}
+\title{Coerce a Vector of Cluster Labels to Canonical Form}
 \usage{
 asCanonical(partition)
 }
 \arguments{
-\item{partition}{A numeric vector representing a set partition of the integers \eqn{1}, ..., \eqn{n}
-using cluster labels}
+\item{partition}{A numeric vector representing a set partition of the
+integers \eqn{1}, ..., \eqn{n} using cluster labels}
 }
 \value{
-A numeric vector representing \code{partition}, but now in canonical form
+A numeric vector representing \code{partition}, but now in canonical
+  form.
 }
 \description{
-Coerce a vector of cluster labels to canonical form
+Coerce a Vector of Cluster Labels to Canonical Form
 }

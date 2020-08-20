@@ -2,16 +2,17 @@
 % Please edit documentation in R/utility.R
 \name{asClusterLabels}
 \alias{asClusterLabels}
-\title{Coerce a set partition in list structure to numeric vectors of cluster label}
+\title{Coerce a Set Partition in List Structure to Numeric Vectors of Cluster Label}
 \usage{
 asClusterLabels(partition)
 }
 \arguments{
-\item{partition}{A list representing a set partition of the integers \eqn{1}, ..., \eqn{n}}
+\item{partition}{A list representing a set partition of the integers \eqn{1},
+..., \eqn{n}}
 }
 \value{
-A numeric vector representing the set partition using cluster labels
+A numeric vector representing the set partition using cluster labels.
 }
 \description{
-Coerce a set partition in list structure to numeric vectors of cluster label
+Coerce a Set Partition in List Structure to Numeric Vectors of Cluster Label
 }

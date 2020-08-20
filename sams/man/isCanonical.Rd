@@ -2,17 +2,17 @@
 % Please edit documentation in R/utility.R
 \name{isCanonical}
 \alias{isCanonical}
-\title{Check if a vector of cluster labels is in canonical form}
+\title{Check if a Vector of Cluster Labels is in Canonical Form}
 \usage{
 isCanonical(partition)
 }
 \arguments{
-\item{partition}{A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-using cluster labels}
+\item{partition}{A numeric vector representing a partition of the integers
+\eqn{1}, ..., \eqn{n} using cluster labels}
 }
 \value{
-Logical, indicating whether \code{partition} is in canonical form
+Logical, indicating whether \code{partition} is in canonical form.
 }
 \description{
-Check if a vector of cluster labels is in canonical form
+Check if a Vector of Cluster Labels is in Canonical Form
 }

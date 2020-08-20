@@ -2,7 +2,7 @@
 % Please edit documentation in R/seqAllocatedMergeSplit_base.R
 \name{seqAllocatedMergeSplit_base}
 \alias{seqAllocatedMergeSplit_base}
-\title{Base functionality for \code{\link{seqAllocatedMergeSplit}}}
+\title{Base Functionality for the seqAllocatedMergeSplit Function}
 \usage{
 seqAllocatedMergeSplit_base(
   partition,
@@ -14,40 +14,45 @@ seqAllocatedMergeSplit_base(
 )
 }
 \arguments{
-\item{partition}{A numeric vector of cluster labels representing the current partition.}
+\item{partition}{A numeric vector of cluster labels representing the current
+partition.}
 
-\item{logPosteriorPredictiveDensity}{A function taking an index \eqn{i} (as a numeric vector of
-length one) and a subset of integers \eqn{subset}, and returning the
-natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that item's contribution to the log
-integrated likelihood given a subset of the other items. The default value "turns off" the
-likelihood, resulting in prior simulation (rather than posterior simulation).}
+\item{logPosteriorPredictiveDensity}{A function taking an index \eqn{i} (as a
+numeric vector of length one) and a subset of integers \eqn{subset}, and
+returning the natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that
+item's contribution to the log integrated likelihood given a subset of the
+other items. The default value "turns off" the likelihood, resulting in
+prior simulation (rather than posterior simulation).}
 
-\item{mass}{A specification of the mass (concentration) parameter in the CRP prior. Must be
-greater than the \code{discount} argument.}
+\item{mass}{A specification of the mass (concentration) parameter in the CRP
+prior. Must be greater than the \code{-discount} argument.}
 
-\item{discount}{A numeric value on the interval [0,1) corresponding to the discount parameter in
-the two-parameter CRP prior.}
+\item{discount}{A numeric value on the interval [0,1) corresponding to the
+discount parameter in the two-parameter CRP prior.}
 
-\item{nUpdates}{An integer giving the number of merge-split proposals before returning. This has
-the effect of thinning the Markov chain.}
+\item{nUpdates}{An integer giving the number of merge-split proposals before
+returning. This has the effect of thinning the Markov chain.}
 
-\item{selectionWeights}{A matrix or data frame whose first two columns are the unique pairs of
-data indices, along with a column of weights representing how likely each pair is to be
-selected at the beginning of each merge-split update.}
+\item{selectionWeights}{A matrix or data frame whose first two columns are
+the unique pairs of data indices, along with a column of weights
+representing how likely each pair is to be selected at the beginning of
+each merge-split update.}
 }
 \value{
-\describe{ \item{partition}{An integer vector giving the updated partition encoded using
-cluster labels.} \item{accept}{The acceptance rate of the Metropolis-Hastings proposals, i.e. the
-number accepted proposals divided by \code{nUpdates}.} }
+\describe{ \item{partition}{An integer vector giving the updated
+  partition encoded using cluster labels.} \item{accept}{The acceptance rate
+  of the Metropolis-Hastings proposals, i.e. the number accepted proposals
+  divided by \code{nUpdates}.} }
 }
 \description{
-Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP) mixture models using
-  sequential allocation of items, as originally described in Dahl (2003), with additional
-  functionality for the two parameter CRP prior.
+Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP)
+mixture models using sequential allocation of items, as originally described
+in Dahl (2003), with additional functionality for the two parameter CRP
+prior.
 }
 \references{
-Dahl, D. B. (2003). An improved merge-split sampler for conjugate Dirichlet process mixture models.
-  Technical Report, 1, 086.
+Dahl, D. B. (2003). An improved merge-split sampler for conjugate
+Dirichlet process mixture models. Technical Report, 1, 086.
 }
 \seealso{
 \code{\link{seqAllocatedMergeSplit}}

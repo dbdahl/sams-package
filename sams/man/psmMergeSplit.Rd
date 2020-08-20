@@ -2,7 +2,8 @@
 % Please edit documentation in R/psmMergeSplit.R
 \name{psmMergeSplit}
 \alias{psmMergeSplit}
-\title{Merge-split sampling for a partition based on sequential allocation informed by pairwise similarities}
+\title{Merge-Split Sampling for a Partition Based on Sequential Allocation Informed
+by Pairwise Similarities}
 \usage{
 psmMergeSplit(
   partition,
@@ -16,43 +17,48 @@ psmMergeSplit(
 )
 }
 \arguments{
-\item{partition}{A numeric vector of cluster labels representing the current partition.}
+\item{partition}{A numeric vector of cluster labels representing the current
+partition.}
 
-\item{psm}{A matrix of previously-calculated pairwise similarity probabilities for each pair of
-data indices.}
+\item{psm}{A matrix of previously-calculated pairwise similarity
+probabilities for each pair of data indices.}
 
-\item{logPosteriorPredictiveDensity}{A function taking an index \eqn{i} (as a numeric vector of
-length one) and a subset of integers \eqn{subset}, and returning the
-natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that item's contribution to the log
-integrated likelihood given a subset of the other items. The default value "turns off" the
-likelihood, resulting in prior simulation (rather than posterior simulation).}
+\item{logPosteriorPredictiveDensity}{A function taking an index \eqn{i} (as a
+numeric vector of length one) and a subset of integers \eqn{subset}, and
+returning the natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that
+item's contribution to the log integrated likelihood given a subset of the
+other items. The default value "turns off" the likelihood, resulting in
+prior simulation (rather than posterior simulation).}
 
-\item{t}{A non-negative integer indicating the number of restricted Gibbs scans to perform for
-each merge/split proposal.}
+\item{t}{A non-negative integer indicating the number of restricted Gibbs
+scans to perform for each merge/split proposal.}
 
-\item{mass}{A specification of the mass (concentration) parameter in the CRP prior. Must be
-greater than the \code{discount} argument.}
+\item{mass}{A specification of the mass (concentration) parameter in the CRP
+prior. Must be greater than the \code{-discount} argument.}
 
-\item{discount}{A numeric value on the interval [0,1) corresponding to the discount parameter in
-the two-parameter CRP prior.}
+\item{discount}{A numeric value on the interval [0,1) corresponding to the
+discount parameter in the two-parameter CRP prior.}
 
-\item{nUpdates}{An integer giving the number of merge-split proposals before returning. This has
-the effect of thinning the Markov chain.}
+\item{nUpdates}{An integer giving the number of merge-split proposals before
+returning. This has the effect of thinning the Markov chain.}
 
-\item{selectionWeights}{A matrix or data frame whose first two columns are the unique pairs of
-data indices, along with a column of weights representing how likely each pair is to be
-selected at the beginning of each merge-split update.}
+\item{selectionWeights}{A matrix or data frame whose first two columns are
+the unique pairs of data indices, along with a column of weights
+representing how likely each pair is to be selected at the beginning of
+each merge-split update.}
 }
 \value{
-\describe{ \item{partition}{A numeric vector giving the updated partition encoded using
-  cluster labels.} \item{accept}{The acceptance rate of the Metropolis-Hastings proposals, i.e.
-  the number of accepted proposals divided by \code{nUpdates}.} }
+\describe{ \item{partition}{A numeric vector giving the updated
+  partition encoded using cluster labels.} \item{accept}{The acceptance rate
+  of the Metropolis-Hastings proposals, i.e. the number of accepted proposals
+  divided by \code{nUpdates}.} }
 }
 \description{
-Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP) mixture
-  models using sequentially-allocated elements. Allocation is performed with weights derived from a
-  previously-calculated pairwise similarity matrix, and optionally complemented with "restricted
-  Gibbs" scans such as those discussed in Jain & Neal (2004).
+Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP)
+mixture models using sequentially-allocated elements. Allocation is performed
+with weights derived from a previously-calculated pairwise similarity matrix,
+and optionally complemented with "restricted Gibbs" scans as discussed in
+Jain & Neal (2004).
 }
 \examples{
 
@@ -109,6 +115,7 @@ plot.ts(entropy)
 
 }
 \references{
-Jain, S., & Neal, R. M. (2004). A split-merge Markov chain Monte Carlo procedure for the Dirichlet
-  process mixture model. \emph{Journal of computational and Graphical Statistics}, 13(1), 158-182.
+Jain, S., & Neal, R. M. (2004). A split-merge Markov chain Monte
+Carlo procedure for the Dirichlet process mixture model. \emph{Journal of
+computational and Graphical Statistics}, 13(1), 158-182.
 }

@@ -1,27 +1,32 @@
 #' Conjugate Gibbs Sampler for a Partition
 #'
-#' Algorithm 3 from Neal (2000) to update the state of a partition based on the "Chinese Restaurant
-#'   Process" (CRP) prior and a user-supplied log posterior predictive density function, with
-#'   additional functionality for the two parameter CRP prior.
+#' Algorithm 3 from Neal (2000) to update the state of a partition based on the
+#' "Chinese Restaurant Process" (CRP) prior and a user-supplied log posterior
+#' predictive density function, with additional functionality for the two
+#' parameter CRP prior.
 #'
-#' @param partition A numeric vector of cluster labels representing the current partition.
-#' @param logPosteriorPredictiveDensity A function taking an index \eqn{i} (as a numeric vector of
-#'   length one) and a subset of integers \eqn{subset}, and returning the
-#'   natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that item's contribution to the log
-#'   integrated likelihood given a subset of the other items. The default value "turns off" the
-#'   likelihood, resulting in prior simulation (rather than posterior simulation).
-#' @param mass A specification of the mass (concentration) parameter in the CRP prior. Must be
-#'   greater than the \code{discount} argument.
-#' @param discount A numeric value on the interval [0,1) corresponding to the discount parameter in
-#'   the two parameter CRP prior.
-#' @param nUpdates An integer giving the number of Gibbs scans before returning. This has the effect
-#'   of thinning the Markov chain.
+#' @param partition A numeric vector of cluster labels representing the current
+#'   partition.
+#' @param logPosteriorPredictiveDensity A function taking an index \eqn{i} (as a
+#'   numeric vector of length one) and a subset of integers \eqn{subset}, and
+#'   returning the natural logarithm of \eqn{p( y_i | y_subset )}, i.e., that
+#'   item's contribution to the log integrated likelihood given a subset of the
+#'   other items. The default value "turns off" the likelihood, resulting in
+#'   prior simulation (rather than posterior simulation).
+#' @param mass A specification of the mass (concentration) parameter in the CRP
+#'   prior. Must be greater than the \code{-discount} argument.
+#' @param discount A numeric value on the interval [0,1) corresponding to the
+#'   discount parameter in the two parameter CRP prior.  Set to zero for the
+#'   usual, one parameter CRP prior.
+#' @param nUpdates An integer giving the number of Gibbs scans before returning.
+#'   This has the effect of thinning the Markov chain.
 #'
-#' @return A numeric vector giving the updated partition encoded using cluster labels.
+#' @return A numeric vector giving the updated partition encoded using cluster
+#'   labels.
 #'
-#' @references
-#' Neal, R. M. (2000). Markov chain sampling methods for Dirichlet process mixture models.
-#'   \emph{Journal of computational and graphical statistics}, 9(2), 249-265.
+#' @references Neal, R. M. (2000). Markov chain sampling methods for Dirichlet
+#' process mixture models. \emph{Journal of computational and graphical
+#' statistics}, 9(2), 249-265.
 #'
 #' @export
 #'
@@ -69,8 +74,8 @@ nealAlgorithm3 <- function(partition,
   if (discount < 0 | discount >= 1) {
     stop("Function argument 'discount' must be on the interval [0,1).")
   }
-  if (mass <= discount) {
-    stop("Function argument 'mass' must be greater than function argument 'discount'.")
+  if (mass <= -discount) {
+    stop("Function argument 'mass' must be greater than the negative of the function argument 'discount'.")
   }
   if (!is.integer(nUpdates)) {
     nUpdates <- as.integer(nUpdates)

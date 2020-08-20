@@ -2,18 +2,19 @@
 % Please edit documentation in R/utility.R
 \name{transformedWeights}
 \alias{transformedWeights}
-\title{Enumerate transformed weights for choosing i and j non-uniformly}
+\title{Enumerate Transformed Weights for Choosing i and j Non-Uniformly}
 \usage{
 transformedWeights(m, fn = function(x) x, eps = 1e-12)
 }
 \arguments{
 \item{m}{A square matrix of pairwise similarilities between items}
 
-\item{fn}{A function that maps pairwise similarities. Default is the identity function.}
+\item{fn}{A function that maps pairwise similarities. Default is the identity
+function.}
 
-\item{eps}{A numeric value close to 0 to give some nonzero weight to pairs of items
-with 0 or 1 pairwise similarity}
+\item{eps}{A numeric value close to 0 to give some nonzero weight to pairs of
+items with 0 or 1 pairwise similarity}
 }
 \description{
-Enumerate transformed weights for choosing i and j non-uniformly
+Enumerate Transformed Weights for Choosing i and j Non-Uniformly
 }

@@ -2,7 +2,8 @@
 % Please edit documentation in R/utility.R
 \name{getThetas}
 \alias{getThetas}
-\title{Get \eqn{theta} parameters from a numeric vector of cluster labels and unique \eqn{phi} values}
+\title{Get theta Parameters from a Numeric Vector of Cluster Labels and Unique phi
+Values}
 \usage{
 getThetas(partition, phi)
 }
@@ -10,12 +11,14 @@ getThetas(partition, phi)
 \item{partition}{A numeric vector representing a partition of the integers
 \eqn{1}, ..., \eqn{n} using cluster labels}
 
-\item{phi}{A list of unique model parameters whose length must equal
-the number of unique cluster labels in \code{partition}}
+\item{phi}{A list of unique model parameters whose length must equal the
+number of unique cluster labels in \code{partition}}
 }
 \value{
-A numeric vector of model parameters \eqn{theta_1}, ..., \eqn{theta_n}
+A numeric vector of model parameters \eqn{theta_1}, ...,
+  \eqn{theta_n}.
 }
 \description{
-Get \eqn{theta} parameters from a numeric vector of cluster labels and unique \eqn{phi} values
+Get theta Parameters from a Numeric Vector of Cluster Labels and Unique phi
+Values
 }

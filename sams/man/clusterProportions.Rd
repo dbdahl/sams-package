@@ -2,20 +2,20 @@
 % Please edit documentation in R/summary.R
 \name{clusterProportions}
 \alias{clusterProportions}
-\title{Compute the proportion of items in each cluster for all partitions}
+\title{Compute the Proportion of Items in Each Cluster for All Partitions}
 \usage{
 clusterProportions(partitions)
 }
 \arguments{
-\item{partitions}{A matrix, with each row representing a set partition of the integers
-\eqn{1}, ..., \eqn{n} as cluster labels}
+\item{partitions}{A matrix, with each row representing a set partition of the
+integers \eqn{1}, ..., \eqn{n} as cluster labels}
 }
 \value{
-A matrix whose columns represent the cumulative proportion of the data that correspond to
- that cluster
+A matrix whose columns represent the cumulative proportion of the
+  data that correspond to that cluster.
 }
 \description{
-Compute the proportion of items in each cluster for all partitions
+Compute the Proportion of Items in Each Cluster for All Partitions
 }
 \examples{
 

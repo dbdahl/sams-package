@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary.R
 \name{clusterTrace}
 \alias{clusterTrace}
-\title{Plot traces of cluster sizes}
+\title{Plot Traces of Cluster Sizes}
 \usage{
 clusterTrace(
   partitions,
@@ -13,13 +13,14 @@ clusterTrace(
 \arguments{
 \item{partitions}{A matrix, with each row a numeric vector cluster labels}
 
-\item{plot.cols}{A character vector of valid color names, whose length represents the maximum
-number of stacked traces to be plotted}
+\item{plot.cols}{A character vector of valid color names, whose length
+represents the maximum number of stacked traces to be plotted}
 
-\item{plot.title}{A character string to be used as the main title on the trace plot}
+\item{plot.title}{A character string to be used as the main title on the
+trace plot}
 }
 \description{
-Plot traces of cluster sizes
+Plot Traces of Cluster Sizes
 }
 \examples{
 

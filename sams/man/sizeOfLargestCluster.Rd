@@ -2,20 +2,20 @@
 % Please edit documentation in R/summary.R
 \name{sizeOfLargestCluster}
 \alias{sizeOfLargestCluster}
-\title{Calculate the number of items in the largest cluster of a set partition}
+\title{Calculate the Number of Items in the Largest Cluster of a Set Partition}
 \usage{
 sizeOfLargestCluster(partition)
 }
 \arguments{
-\item{partition}{A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-using cluster labels}
+\item{partition}{A numeric vector representing a partition of the integers
+\eqn{1}, ..., \eqn{n} using cluster labels}
 }
 \value{
-The number of items in the largest cluster of the given partition as a numeric vector
- of length one
+The number of items in the largest cluster of the given partition as
+  a numeric vector of length one.
 }
 \description{
-Calculate the number of items in the largest cluster of a set partition
+Calculate the Number of Items in the Largest Cluster of a Set Partition
 }
 \examples{
 

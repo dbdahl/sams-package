@@ -2,17 +2,19 @@
 % Please edit documentation in R/utility.R
 \name{asSetPartition}
 \alias{asSetPartition}
-\title{Coerce a set partition as numeric vectors of cluster labels to a list structure}
+\title{Coerce a Set Partition as Numeric Vectors of Cluster Labels to a List
+Structure}
 \usage{
 asSetPartition(partition)
 }
 \arguments{
-\item{partition}{A numeric vector representing a partition of the integers \eqn{1}, ..., \eqn{n}
-using cluster labels}
+\item{partition}{A numeric vector representing a partition of the integers
+\eqn{1}, ..., \eqn{n} using cluster labels}
 }
 \value{
-The set partition in a list structure
+The set partition in a list structure.
 }
 \description{
-Coerce a set partition as numeric vectors of cluster labels to a list structure
+Coerce a Set Partition as Numeric Vectors of Cluster Labels to a List
+Structure
 }
