@@ -1,0 +1,4 @@
+0.3.0 (2020-8-19)
+  * Refine function documentation
+  * Set maintainer to David B. Dahl
+  * Remove dependency on salso package
