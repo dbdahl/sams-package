@@ -1,3 +1,5 @@
 0.4.0 (2020-08-20)
   * Initial submission to CRAN.
 
+0.4.1 (2020-08-24)
+  * Added data repository for datasets included in SAMS paper
