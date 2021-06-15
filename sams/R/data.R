@@ -3,51 +3,99 @@
 #' Multivariate categorical data, generated as five clusters of independent variables with different
 #'   success probabilities.
 #'
-#' @format A data frame with 100 rows and 6 variables
-#'
-"p6_bernoulli"
+#' @name p6_bern
+NULL
+
+#' @rdname p6_bern
+"p6_bern_1"
+
+#' @rdname p6_bern
+"p6_bern_2"
+
+#' @rdname p6_bern
+"p6_bern_3"
 
 #' Multivariate Independent Bernoulli Data (p = 18)
 #'
 #' Multivariate categorical data, generated as five clusters of independent variables with different
 #'   success probabilities.
 #'
-#' @format A data frame with 100 rows and 18 variables.
-#'
-"p18_bernoulli"
+#' @name p18_bern
+NULL
+
+#' @rdname p18_bern
+"p18_bern_1"
+
+#' @rdname p18_bern
+"p18_bern_2"
+
+#' @rdname p18_bern
+"p18_bern_3"
 
 #' Large Sample Multivariate Independent Bernoulli Data (p = 6)
 #'
 #' Multivariate categorical data, generated as five clusters of independent variables with different
 #'   success probabilities.
 #'
-#' @format A data frame with 1000 rows and 6 variables.
-#'
-"p6_big_bernoulli"
+#' @name p6_big_bern
+NULL
+
+#' @rdname p6_big_bern
+"p6_big_bern_1"
+
+#' @rdname p6_big_bern
+"p6_big_bern_2"
+
+#' @rdname p6_big_bern
+"p6_big_bern_3"
 
 #' Independent Multivariate Normal Data (p = 6)
 #'
 #' Multivariate continuous data, generated as five clusters of independent variables with different
 #'   means.
 #'
-#' @format A data frame with 100 rows and 6 variables.
-#'
-"p6_mvn"
+#' @name p6_mvn
+NULL
+
+#' @rdname p6_mvn
+"p6_mvn_1"
+
+#' @rdname p6_mvn
+"p6_mvn_2"
+
+#' @rdname p6_mvn
+"p6_mvn_3"
 
 #' Independent Multivariate Normal Data (p = 18)
 #'
 #' Multivariate continuous data, generated as five clusters of independent variables with different
 #'   means.
 #'
-#' @format A data frame with 100 rows and 18 variables
-#'
-"p18_mvn"
+#' @name p18_mvn
+NULL
+
+#' @rdname p18_mvn
+"p18_mvn_1"
+
+#' @rdname p18_mvn
+"p18_mvn_2"
+
+#' @rdname p18_mvn
+"p18_mvn_3"
 
 #' Correlated Multivariate Normal Data (p = 18)
 #'
 #' Multivariate continuous data, generated as five clusters with an AR(1) correlation structure
 #'   determining the common covariance matrix for each observation.
 #'
-#' @format A data frame with 100 rows and 18 variables
-#'
-"p18_corr_mvn"
+#' @name p18_corr_mvn
+NULL
+
+#' @rdname p18_corr_mvn
+"p18_corr_mvn_1"
+
+#' @rdname p18_corr_mvn
+"p18_corr_mvn_2"
+
+#' @rdname p18_corr_mvn
+"p18_corr_mvn_3"

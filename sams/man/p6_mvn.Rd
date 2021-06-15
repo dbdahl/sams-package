@@ -3,12 +3,23 @@
 \docType{data}
 \name{p6_mvn}
 \alias{p6_mvn}
+\alias{p6_mvn_1}
+\alias{p6_mvn_2}
+\alias{p6_mvn_3}
 \title{Independent Multivariate Normal Data (p = 6)}
 \format{
-A data frame with 100 rows and 6 variables.
+An object of class \code{matrix} (inherits from \code{array}) with 100 rows and 6 columns.
+
+An object of class \code{matrix} (inherits from \code{array}) with 100 rows and 6 columns.
+
+An object of class \code{matrix} (inherits from \code{array}) with 100 rows and 6 columns.
 }
 \usage{
-p6_mvn
+p6_mvn_1
+
+p6_mvn_2
+
+p6_mvn_3
 }
 \description{
 Multivariate continuous data, generated as five clusters of independent variables with different

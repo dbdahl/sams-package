@@ -3,12 +3,23 @@
 \docType{data}
 \name{p18_corr_mvn}
 \alias{p18_corr_mvn}
+\alias{p18_corr_mvn_1}
+\alias{p18_corr_mvn_2}
+\alias{p18_corr_mvn_3}
 \title{Correlated Multivariate Normal Data (p = 18)}
 \format{
-A data frame with 100 rows and 18 variables
+An object of class \code{matrix} (inherits from \code{array}) with 100 rows and 18 columns.
+
+An object of class \code{matrix} (inherits from \code{array}) with 100 rows and 18 columns.
+
+An object of class \code{matrix} (inherits from \code{array}) with 100 rows and 18 columns.
 }
 \usage{
-p18_corr_mvn
+p18_corr_mvn_1
+
+p18_corr_mvn_2
+
+p18_corr_mvn_3
 }
 \description{
 Multivariate continuous data, generated as five clusters with an AR(1) correlation structure
