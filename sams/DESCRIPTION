@@ -1,9 +1,9 @@
 Package: sams
 Type: Package
 Title: Merge-Split Samplers for Conjugate Bayesian Nonparametric Models
-Version: 0.4.0
+Version: 0.4.2
 Authors@R: c(person(given = "Spencer",  family = "Newcomb", email = "spencenewcomb08@gmail.com", role = c("aut")),
-             person(given = "David B.", family = "Dahl",    email = "dahl@stat.byu.edu",         role = c("ctb","cre")))
+             person(given="David B.",family="Dahl",role=c("ctb","cre"),email="dahl@stat.byu.edu",comment=c(ORCID="0000-0002-8173-1547")))
 Description: Markov chain Monte Carlo samplers for posterior simulations of conjugate Bayesian nonparametric
     mixture models. Functionality is provided for Gibbs sampling as in Algorithm 3 of Neal (2000)
     <DOI:10.1080/10618600.2000.10474879>, restricted Gibbs merge-split sampling as described in Jain & Neal
