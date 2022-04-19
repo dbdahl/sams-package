@@ -1,9 +1,9 @@
 #' Base Functionality for the seqAllocatedMergeSplit Function
 #'
 #' Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP)
-#' mixture models using sequential allocation of items, as originally described
-#' in Dahl (2003), with additional functionality for the two parameter CRP
-#' prior.
+#' mixture models using sequential allocation of items (with additional
+#' functionality for the two parameter CRP prior) as described in Dahl &
+#' Newcomb (2022).
 #'
 #' @param partition A numeric vector of cluster labels representing the current
 #'   partition.
@@ -29,8 +29,11 @@
 #'   of the Metropolis-Hastings proposals, i.e. the number accepted proposals
 #'   divided by \code{nUpdates}.} }
 #'
-#' @references Dahl, D. B. (2003). An improved merge-split sampler for conjugate
-#' Dirichlet process mixture models. Technical Report, 1, 086.
+#' @references
+#'
+#' Dahl, D. B. & Newcomb, S. (2022). Sequentially allocated
+#' merge-split samplers for conjugate Bayesian nonparametric models.
+#' \emph{Journal of Statistical Computation and Simulation}, 92(7), 1487-1511.
 #'
 #' @seealso \code{\link{seqAllocatedMergeSplit}}
 #'

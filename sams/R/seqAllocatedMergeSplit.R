@@ -1,10 +1,10 @@
 #' Merge-split Sampling for a Partition Based on Sequential Allocation of Items
 #'
 #' Merge-split proposals for conjugate "Chinese Restaurant Process" (CRP)
-#' mixture models using sequential allocation of items, as originally described
-#' in Dahl (2003), with additional functionality for the two parameter CRP
-#' prior, as well as complementing these allocations with restricted Gibbs scans
-#' such as those discussed in Jain & Neal (2004).
+#' mixture models using sequential allocation of items (with additional
+#' functionality for the two parameter CRP prior) as described in Dahl &
+#' Newcomb (2022), as well as complementing these allocations with restricted
+#' Gibbs scans such as those discussed in Jain & Neal (2004).
 #'
 #' @param partition A numeric vector of cluster labels representing the current
 #'   partition.
@@ -32,11 +32,15 @@
 #'   of the Metropolis-Hastings proposals, i.e. the number accepted proposals
 #'   divided by \code{nUpdates}.} }
 #'
-#' @references Dahl, D. B. (2003). An improved merge-split sampler for conjugate
-#' Dirichlet process mixture models. Technical Report, 1, 086. Jain, S., & Neal,
-#' R. M. (2004). A split-merge Markov chain Monte Carlo procedure for the
-#' Dirichlet process mixture model. \emph{Journal of computational and Graphical
-#' Statistics}, 13(1), 158-182.
+#' @references
+#'
+#' Dahl, D. B. & Newcomb, S. (2022). Sequentially allocated
+#' merge-split samplers for conjugate Bayesian nonparametric models.
+#' \emph{Journal of Statistical Computation and Simulation}, 92(7), 1487-1511.
+#'
+#' Jain, S., & Neal, R. M. (2004). A split-merge Markov chain Monte Carlo
+#' procedure for the Dirichlet process mixture model. \emph{Journal of
+#' Computational and Graphical Statistics}, 13(1), 158-182.
 #'
 #' @import stats
 #'
